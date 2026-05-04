@@ -1,0 +1,106 @@
+export default function BaseForteSite() {
+  const servicos = [
+    ["Refeições Transportadas", "Refeições preparadas com padrão de qualidade e segurança alimentar."],
+    ["Gestão de Refeitórios", "Administração completa do refeitório da empresa."],
+    ["Marmitas Industriais", "Marmitas balanceadas para empresas, obras e operações remotas."],
+    ["Planejamento Nutricional", "Cardápios elaborados com equilíbrio, variedade e qualidade."],
+    ["Logística e Distribuição", "Operação planejada para garantir pontualidade e qualidade."]
+  ];
+
+  const diferenciais = ["Segurança alimentar", "Qualidade e padrão", "Eficiência operacional", "Foco no cliente", "Pontualidade garantida", "Equipe especializada"];
+  const segmentos = ["Construção civil", "Indústrias", "Usinas e energia", "Empresas corporativas", "Operações remotas", "Eventos empresariais"];
+
+  return (
+    <div className="min-h-screen bg-white text-slate-800">
+      <header className="bg-[#062447] text-white sticky top-0 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <img src="/logo-base-forte.png" alt="Base Forte Refeições Corporativas" className="h-16 w-auto object-contain" />
+          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase">
+            <a href="#home" className="text-orange-500">Home</a>
+            <a href="#quem-somos">Quem Somos</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#diferenciais">Diferenciais</a>
+            <a href="#segmentos">Segmentos</a>
+            <a href="#contato">Contato</a>
+          </nav>
+          <a href="https://wa.me/5541999999999" className="hidden md:inline-flex bg-orange-500 px-5 py-3 rounded-xl font-bold text-sm">Fale Conosco</a>
+        </div>
+      </header>
+
+      <section id="home" className="bg-[#062447] text-white py-20 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-orange-500 font-bold uppercase tracking-widest mb-4">Refeições Corporativas</p>
+            <h1 className="text-5xl md:text-6xl font-black leading-tight">Alimentação que <span className="text-orange-500">sustenta</span> operações</h1>
+            <p className="mt-6 text-lg text-slate-200 max-w-xl">Soluções completas em alimentação industrial para empresas, obras, indústrias e grandes contratos corporativos.</p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <a href="https://wa.me/5541999999999" className="bg-orange-500 px-7 py-4 rounded-2xl font-bold text-center">Solicitar Proposta</a>
+              <a href="#servicos" className="border border-white px-7 py-4 rounded-2xl font-bold text-center">Conheça os Serviços</a>
+            </div>
+          </div>
+          <div className="bg-white rounded-3xl p-4 shadow-2xl">
+            <img src="/cozinha-industrial.jpg" alt="Refeições corporativas em escala" className="rounded-2xl w-full h-[420px] object-cover" />
+          </div>
+        </div>
+      </section>
+
+      <section id="quem-somos" className="py-20 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <img src="/veiculo-base-forte.jpg" alt="Logística Base Forte Refeições" className="rounded-3xl w-full h-[360px] object-cover shadow-xl" />
+          <div>
+            <p className="text-orange-500 font-bold uppercase tracking-widest mb-3">Quem Somos</p>
+            <h2 className="text-4xl font-black text-[#062447]">Experiência, estrutura e compromisso</h2>
+            <p className="mt-6 text-lg leading-relaxed">A Base Forte Refeições Corporativas é especializada em alimentação coletiva de alta performance, com planejamento, preparo e distribuição de refeições balanceadas e seguras.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicos" className="bg-slate-100 py-20 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl font-black text-[#062447]">Nossos Serviços</h2>
+          <div className="mt-12 grid md:grid-cols-5 gap-6">
+            {servicos.map(([titulo, texto]) => (
+              <div key={titulo} className="bg-white rounded-2xl p-6 shadow-md text-left">
+                <div className="h-12 w-12 rounded-xl bg-orange-100 text-orange-500 flex items-center justify-center font-black text-xl mb-5">BF</div>
+                <h3 className="font-black text-[#062447] text-lg uppercase">{titulo}</h3>
+                <p className="mt-3 text-sm text-slate-600">{texto}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="diferenciais" className="bg-[#062447] text-white py-20 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl font-black">Nossos Diferenciais</h2>
+          <div className="mt-10 grid md:grid-cols-3 gap-8">
+            {diferenciais.map((item) => (
+              <div key={item} className="border border-orange-500/40 rounded-2xl p-6 bg-white/5">
+                <h3 className="text-xl font-black text-orange-500 uppercase">{item}</h3>
+                <p className="mt-3 text-slate-200">Processos estruturados para garantir padrão, controle e alta performance.</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="segmentos" className="py-20 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl font-black text-[#062447]">Segmentos Atendidos</h2>
+          <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {segmentos.map((item) => <div key={item} className="bg-slate-100 rounded-2xl p-6 font-bold text-[#062447]">{item}</div>)}
+          </div>
+        </div>
+      </section>
+
+      <footer id="contato" className="bg-white text-slate-800 py-14 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
+          <div><img src="/logo-base-forte.png" alt="Base Forte" className="h-20 mb-4" /><p>Alimentação que sustenta operações.</p></div>
+          <div><h3 className="font-black text-[#062447] mb-4">Fale Conosco</h3><p>📞 (41) 99999-9999</p><p>✉ comercial@baseforte.com.br</p><p>📍 Curitiba - PR</p></div>
+          <div><h3 className="font-black text-[#062447] mb-4">Horário</h3><p>Segunda a Sexta</p><p>07h às 17h</p></div>
+          <div><h3 className="font-black text-[#062447] mb-4">Proposta</h3><a href="https://wa.me/5541999999999" className="text-orange-500 font-black">Atendimento via WhatsApp</a></div>
+        </div>
+      </footer>
+    </div>
+  );
+}
